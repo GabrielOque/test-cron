@@ -18,7 +18,12 @@ const transporter = nodemailer.createTransport({
   debug: true,
 });
 
-const list = ["oquendogabriel18@gmail.com", "oquendodev@gmail.com"];
+const list = [
+  "oquendogabriel18@gmail.com",
+  "oquendodev@gmail.com",
+  "fredyhernandoqs@gmail.com",
+  "sebastianmonsalvec16@gmail.com",
+];
 
 app.get("/", (req, res) => {
   res.send("Servidor en funcionamiento");
@@ -29,8 +34,8 @@ cron.schedule("*/10 * * * *", async () => {
   await transporter.sendMail({
     from: '"Code Journey" <codejourneydevelopers@gmail.com>',
     to: list,
-    subject: "Recuerda pagar tu factura",
-    text: "Recuerda pagar tu factura que mañana es el día de corte",
+    subject: "Señores desarrolladores",
+    text: "Señores esto es una función que les mandará un correo cada 10 minutos, si no me piden porfavor que la quite la dejaré prendida, ademas si no lo hacen invitandome a pastel de pollo, se los envio tambien al correo institucional",
   });
   console.log("Se ha enviado un correo electrónico");
 });
