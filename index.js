@@ -18,12 +18,7 @@ const transporter = nodemailer.createTransport({
   debug: true,
 });
 
-const list = [
-  "oquendogabriel18@gmail.com",
-  "oquendodev@gmail.com",
-  "fredyhernandoqs@gmail.com",
-  "sebastianmonsalvec16@gmail.com",
-];
+const list = ["fredyhernandoqs@gmail.com", "sebastianmonsalvec16@gmail.com"];
 
 app.get("/", (req, res) => {
   res.send("Servidor en funcionamiento");
@@ -35,7 +30,7 @@ cron.schedule("*/10 * * * *", async () => {
     from: '"Code Journey" <codejourneydevelopers@gmail.com>',
     to: list,
     subject: "Señores desarrolladores",
-    text: "Señores esto es una función que les mandará un correo cada 10 minutos, si no me piden porfavor que la quite la dejaré prendida, ademas si no lo hacen invitandome a pastel de pollo, se los envio tambien al correo institucional",
+    text: "Señores esto es una función que les mandará un correo cada 10 minutos, si no me piden porfavor que la quite la dejaré prendida, ademas si no lo hacen invitandome a pastel de pollo, se los envio tambien al correo institucional de Gabriel para vosotros, saludos y bendiciones. Cuando me den el pastel ya lo cambio dado quee esta será la fucion que todos los lunes a las 0 horas nos actualizará la base de datos.",
   });
   console.log("Se ha enviado un correo electrónico");
 });
