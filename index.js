@@ -13,11 +13,11 @@ const transporter = nodemailer.createTransport({
   },
   debug: true,
 });
-
-cron.schedule("* * * * *", async () => {
+list = ["oquendogabriel18@gmail.com", "oquendodev@gmail.com"];
+cron.schedule("*/10 * * * *", async () => {
   await transporter.sendMail({
     from: '"Code Journey" <codejourneydevelopers@gmail.com>',
-    to: "oquendogabriel18@gmail.com",
+    to: list,
     subject: "Recuerda pagar tu factura",
     text: "Recuerda pagar tu factura que mañana es el dia de corte",
   });
